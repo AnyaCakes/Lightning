@@ -1,3 +1,19 @@
+import processing.core.*; 
+import processing.data.*; 
+import processing.event.*; 
+import processing.opengl.*; 
+
+import java.util.HashMap; 
+import java.util.ArrayList; 
+import java.io.File; 
+import java.io.BufferedReader; 
+import java.io.PrintWriter; 
+import java.io.InputStream; 
+import java.io.OutputStream; 
+import java.io.IOException; 
+
+public class Lightning extends PApplet {
+
 int r=(int)(Math.random()*100)+50;
 int sX=r;
 int sY=0;
@@ -7,12 +23,12 @@ float c=1;
 float c2=1;
 int slend=1;
 
-void setup()
+public void setup()
 {
 	background(25,25,25);
  	size(300,300);
 }
-void draw()
+public void draw()
 {
 
 		
@@ -42,7 +58,7 @@ void draw()
 		triangle(240,240,250,230,260,240);
 		//slender man
 		fill(0);
-		rect(slend-5.515,85+140,10,20,10);
+		rect(slend-5.515f,85+140,10,20,10);
 		fill(75,75,75);
 		ellipse(slend,80+140,10,15);
 		fill(0);
@@ -63,7 +79,7 @@ void draw()
 	}
 
 }
-void mousePressed()
+public void mousePressed()
 {
 	slend=(int)(Math.random()*290)+10;
 	r=(int)(Math.random()*100)+50;
@@ -77,3 +93,12 @@ void mousePressed()
 	c2=0;
 }
 
+  static public void main(String[] passedArgs) {
+    String[] appletArgs = new String[] { "Lightning" };
+    if (passedArgs != null) {
+      PApplet.main(concat(appletArgs, passedArgs));
+    } else {
+      PApplet.main(appletArgs);
+    }
+  }
+}
