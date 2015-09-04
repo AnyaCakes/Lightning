@@ -37,9 +37,10 @@ void draw()
 		rect(0,250,300,50);
 		stroke(0);
 		fill(80,0,0);
-		rect(240,240,20,20);
+		rect(240,220,40,40);
 		fill(80,80,80);
-		triangle(240,240,250,230,260,240);
+		triangle(240,220,260,200,280,220);
+		rect(255,240,10,20);
 		//slender man
 		fill(0);
 		rect(slend-5.515,85+140,10,20,10);
@@ -59,7 +60,7 @@ void draw()
 	}
 	if(c2>100)
 	{
-		mousePressed();     
+		light();     
 	}
 
 }
@@ -77,3 +78,16 @@ void mousePressed()
 	c2=0;
 }
 
+void light()
+{
+	slend=(int)(Math.random()*290)+10;
+	r=(int)(Math.random()*100)+50;
+	sX=r;
+	sY=0;
+	sX2=r;
+	sY2=0;
+	redraw();
+	background(25,25,25);
+	c=0;
+	c2=0;
+}
