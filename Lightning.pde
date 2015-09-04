@@ -58,10 +58,6 @@ void draw()
 	{
 		background(25,25,25);
 	}
-	if(c2>100)
-	{
-		light();     
-	}
 
 }
 void mousePressed()
@@ -78,16 +74,3 @@ void mousePressed()
 	c2=0;
 }
 
-void light()
-{
-	slend=(int)(Math.random()*290)+10;
-	r=(int)(Math.random()*100)+50;
-	sX=r;
-	sY=0;
-	sX2=r;
-	sY2=0;
-	redraw();
-	background(25,25,25);
-	c=0;
-	c2=0;
-}
