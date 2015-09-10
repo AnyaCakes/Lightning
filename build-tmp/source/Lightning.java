@@ -14,15 +14,14 @@ import java.io.IOException;
 
 public class Lightning extends PApplet {
 
-int r=(int)(Math.random()*100)+50;
-int sX=r;
+int ro=(int)(Math.random()*100)+50;
+int sX=ro;
 int sY=0;
-int sX2=r;
+int sX2=ro;
 int sY2=0;
 float c=1;
-float c2=1;
 int slend=1;
-
+int addy=1;
 public void setup()
 {
 	background(25,25,25);
@@ -30,25 +29,23 @@ public void setup()
 }
 public void draw()
 {
-
-		
-	while(sY2<270){
+	while(sY2<260){
 		stroke(255,255,255);
 		strokeWeight(1);
 		line(sX, sY, sX2, sY2);
-		r=(int)(Math.random()*100)+50;
+		ro=(int)(Math.random()*100)+50;
 		sX=sX2;
 		sY=sY2;
-		sX2=r;
-		sX2=r+(int)(Math.random()*20)-10;
-		sY2=sY2+(int)(Math.random()*20)+10;		
-	};
-	c=c+1;
-	c2=c2+1;
-	if(c>5)
+		sX2=ro;
+		sX2=ro+(int)(Math.random()*20)-10;
+		sY2=sY2+(int)(Math.random()*20)+10;
+	}
+	c=c+addy;
+	if(c>40)
 	{
 		//little farm
 		background(255,255,255);
+		
 		fill(0,60,0);
 		rect(0,250,300,50);
 		stroke(0);
@@ -70,43 +67,28 @@ public void draw()
 		
 
 	}
-	if(c2>12)
+	if(c>60)
 	{
 		background(25,25,25);
-	}
-	if(c2>100)
-	{
-		light();     
+		addy=0;
 	}
 
 }
 public void mousePressed()
 {
+
 	slend=(int)(Math.random()*290)+10;
-	r=(int)(Math.random()*100)+50;
-	sX=r;
+	ro=(int)(Math.random()*100)+50;
+	sX=ro;
 	sY=0;
-	sX2=r;
+	sX2=ro;
 	sY2=0;
-	redraw();
 	background(25,25,25);
+	redraw();
 	c=0;
-	c2=0;
+	addy=1;
 }
 
-public void light()
-{
-	slend=(int)(Math.random()*290)+10;
-	r=(int)(Math.random()*100)+50;
-	sX=r;
-	sY=0;
-	sX2=r;
-	sY2=0;
-	redraw();
-	background(25,25,25);
-	c=0;
-	c2=0;
-}
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Lightning" };
     if (passedArgs != null) {
